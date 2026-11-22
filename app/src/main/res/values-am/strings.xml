@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Common -->
+    <string name="action_save">አስቀምጥ</string>
+    <string name="action_cancel">ይቅር</string>
+    <string name="action_delete">ሰርዝ</string>
+    <string name="action_add">ጨምር</string>
+    <string name="action_switch">ቀይር</string>
+    <string name="cd_back">ተመለስ</string>
+
+    <!-- Home -->
+    <string name="home_title">የእኔ የውጤት ሪፖርት</string>
+    <string name="cd_target_calc">የግብ ማስያ</string>
+    <string name="cd_settings">ቅንብሮች</string>
+    <string name="cd_share">አጋራ</string>
+    <string name="fab_semester">ሴሚስተር</string>
+    <string name="cgpa_title">ድምር ጂፒኤ (CGPA)</string>
+    <string name="credit_hours_graded">%1$s ውጤት የተሰጣቸው ክሬዲት ሰዓቶች</string>
+    <string name="home_empty">እስካሁን ምንም ሴሚስተር የለም። የመጀመሪያውን ለመጨመር + ሴሚስተር ይጫኑ፣ ከዚያ ኮርሶችዎን ከውጤታቸው ጋር ያስገቡ። ደረጃዎችዎ በመደበኛው የውጤት ሰንጠረዥ መሠረት ለእርስዎ ይሰላሉ (ቅንብሮችን ይመልከቱ)።</string>
+    <string name="semesters_heading">ሴሚስተሮች</string>
+    <string name="semester_summary">%1$d ኮርሶች | %2$s ክሬዲት ሰዓት</string>
+    <string name="gpa_label">ጂፒኤ</string>
+    <string name="cd_delete_semester">ሴሚስተሩን ሰርዝ</string>
+    <string name="delete_semester_title">%1$s ይሰረዝ?</string>
+    <string name="delete_semester_message">በዚህ ሴሚስተር ውስጥ ያሉ ሁሉም ኮርሶችም ይሰረዛሉ።</string>
+    <string name="trend_title">የጂፒኤ አዝማሚያ</string>
+    <string name="legend_sgpa">የሴሚስተር ጂፒኤ</string>
+    <string name="legend_cgpa">ድምር ጂፒኤ</string>
+    <string name="share_title">ውጤትዎን ያጋሩ</string>
+    <string name="share_pdf">እንደ PDF አጋራ</string>
+    <string name="share_image">እንደ ምስል አጋራ</string>
+    <string name="share_chooser">የውጤት ሪፖርትዎን ያጋሩ</string>
+    <string name="share_failed">ሪፖርቱን መፍጠር አልተቻለም</string>
+
+    <!-- Semester screen -->
+    <string name="semester_gpa_title">የሴሚስተር ጂፒኤ</string>
+    <string name="courses_heading">ኮርሶች</string>
+    <string name="fab_course">ኮርስ</string>
+    <string name="semester_empty">እስካሁን ምንም ኮርስ የለም። + ኮርስ ይጫኑ እና ክሬዲት ሰዓቱን እና ውጤትዎን ያስገቡ።</string>
+    <string name="course_credit_line">%1$s ክሬዲት ሰዓት | %2$d ECTS</string>
+    <string name="cd_delete_course">ኮርሱን ሰርዝ</string>
+    <string name="retaken_note">በኋላ ተደግሟል፡ በCGPA ውስጥ አይቆጠርም</string>
+
+    <!-- Course dialog -->
+    <string name="add_course">ኮርስ ጨምር</string>
+    <string name="edit_course">ኮርስ አስተካክል</string>
+    <string name="course_name">የኮርስ ስም</string>
+    <string name="course_exists">ይህ ኮርስ በዚህ ሴሚስተር ውስጥ አስቀድሞ አለ</string>
+    <string name="credit_hours">ክሬዲት ሰዓት</string>
+    <string name="mark_label">ውጤት ከ100 (አማራጭ)</string>
+    <string name="mark_error">ከ0 እስከ 100 ያለ ቁጥር ያስገቡ</string>
+    <string name="mark_preview">ደረጃ፡ %1$s (%2$s ነጥብ)</string>
+    <string name="mark_hint">ደረጃዎ ከውጤት ሰንጠረዡ ተነስቶ ለእርስዎ ይሰላል</string>
+    <string name="grade_button">ደረጃ፡ %1$s</string>
+    <string name="not_graded">አልተሰጠም</string>
+    <string name="not_graded_item">ደረጃ አልተሰጠም</string>
+    <string name="switch_to_mark">ውጤቴን አውቃለሁ</string>
+    <string name="switch_to_letter">ፊደል ደረጃዬን ብቻ አውቃለሁ</string>
+    <string name="calc_from_assessments">ከግምገማዎች አስላ</string>
+    <string name="retake_hint">ይህ ኮርስ በ%1$s ውስጥም አለ። በCGPA ውስጥ የሚቆጠረው የመጨረሻው ውጤት የተሰጠው ሙከራ ብቻ ነው።</string>
+
+    <!-- Course mark calculator -->
+    <string name="assess_title">የኮርስ ውጤት ማስያ</string>
+    <string name="assess_intro">እያንዳንዱን ግምገማ ያገኙትን ውጤት እና ሊያስገኝ የሚችለውን ከፍተኛ ነጥብ (ክብደቱን) ይጨምሩ። ለምሳሌ፡ ሚድ ፈተና ከ30 18።</string>
+    <string name="assess_name">ስም</string>
+    <string name="assess_earned">ውጤት</string>
+    <string name="assess_max">ከ</string>
+    <string name="assess_add">ግምገማ ጨምር</string>
+    <string name="cd_remove">አስወግድ</string>
+    <string name="assess_default_assignment">ምደባ</string>
+    <string name="assess_default_mid">ሚድ ፈተና</string>
+    <string name="assess_default_final">የመጨረሻ ፈተና</string>
+    <string name="assess_result">እስካሁን ያለ ውጤት፡ %1$s%% (ከ%3$s ነጥብ %2$s)</string>
+    <string name="assess_empty">ውጤቱን ለማየት ቢያንስ አንድ ውጤት ያስገቡ።</string>
+    <string name="assess_use">ይህን ውጤት ተጠቀም</string>
+    <string name="assess_sum_note">ጠቃሚ ምክር፡ ክብደቶች በአብዛኛው ድምራቸው 100 ነው (አሁን %1$s)</string>
+
+    <!-- Semester picker -->
+    <string name="new_semester">አዲስ ሴሚስተር</string>
+    <string name="picker_exists">%1$s አስቀድሞ ተጨምሯል</string>
+    <string name="year_label">ዓመት %1$s</string>
+    <string name="term_label">ሴሚስተር %1$s</string>
+    <string name="term_one">አንድ</string>
+    <string name="term_two">ሁለት</string>
+    <string name="semester_full">%1$s፣ %2$s</string>
+
+    <!-- Target calculator -->
+    <string name="whatif_title">የግብ ማስያ</string>
+    <string name="current_cgpa">የአሁኑ CGPA</string>
+    <string name="target_cgpa">የግብ CGPA</string>
+    <string name="next_credits">የሚቀጥለው ሴሚስተር ክሬዲት ሰዓት</string>
+    <string name="whatif_enter">የግብ CGPA እና የሚቀጥለው ሴሚስተር ክሬዲት ሰዓት ያስገቡ።</string>
+    <string name="whatif_credits_positive">ክሬዲት ሰዓት ከ0 መብለጥ አለበት።</string>
+    <string name="whatif_invalid">ትክክለኛ ዋጋዎችን ያስገቡ።</string>
+    <string name="whatif_unreachable">በሚቀጥለው ሴሚስተር ማሳካት አይቻልም። %1$s ጂፒኤ ያስፈልግዎታል፣ ነገር ግን ከፍተኛው የሚቻለው %2$s ነው።</string>
+    <string name="whatif_met">ይህን ግብ አስቀድመው አሳክተዋል። በሚቀጥለው ሴሚስተር ማንኛውም ጂፒኤ ከግቡ በላይ ወይም እኩል ያደርግዎታል።</string>
+    <string name="whatif_need">በሚቀጥለው ሴሚስተር %1$s ጂፒኤ ያስፈልግዎታል።</string>
+
+    <!-- Settings -->
+    <string name="scale_title">የውጤት ሰንጠረዥ</string>
+    <string name="scale_intro">ውጤቶች ወደ ሙሉ ቁጥር ይጠጋሉ (74.5 እንደ 75 ይቆጠራል) እና ከታች ካለው ደረጃ ጋር ይመሳሰላሉ። ከዩኒቨርሲቲዎ ጋር እንዲስማማ ነጥቦቹን ያስተካክሉ። ለውጦች ሁሉንም ጂፒኤዎች ወዲያውኑ ያዘምናሉ።</string>
+    <string name="points">ነጥብ</string>
+    <string name="reset_scale">ወደ መደበኛው (የኢትዮጵያ) ሰንጠረዥ መልስ</string>
+    <string name="language_title">ቋንቋ</string>
+    <string name="presets_title">የውጤት ሰንጠረዥ ምርጫ</string>
+    <string name="presets_note">ዩኒቨርሲቲዎ የሚጠቀምበትን ሰንጠረዥ ይምረጡ። ከዚያ በኋላ ነጥቦቹን ማስተካከል ይችላሉ። እባክዎ ከዩኒቨርሲቲዎ የውጤት አሰጣጥ መመሪያ ጋር ያረጋግጡ።</string>
+    <string name="preset_ethiopia">የኢትዮጵያ ዩኒቨርሲቲ 4.0 (መደበኛ)</string>
+    <string name="preset_us_pm">መደበኛ 4.0 ከ+/− ጋር</string>
+    <string name="preset_us_simple">ቀላል 4.0 (A፣ B፣ C፣ D፣ F)</string>
+    <string name="preset_five">5.0 ሰንጠረዥ (A እስከ F፣ ከፍተኛው 5.0)</string>
+    <string name="preset_confirm_title">ወደ %1$s ይቀየር?</string>
+    <string name="preset_confirm_message">ይህ አሁን ያለውን የውጤት ሰንጠረዥ ይተካል እና ሁሉንም ጂፒኤዎችዎን እንደገና ያሰላል።</string>
+
+    <!-- Welcome -->
+    <string name="welcome_title">እንኳን ወደ GradeCalc በደህና መጡ</string>
+    <string name="welcome_intro">የሴሚስተር ጂፒኤዎን እና CGPAዎን በጥቂት ንክኪዎች ያስሉ። የውጤት ሰንጠረዡን ማወቅ አያስፈልግዎትም፤ ውጤትዎን ብቻ ያስገቡ።</string>
+    <string name="step1_title">ሴሚስተር ጨምሩ</string>
+    <string name="step1_desc">ዓመቱን እና ሴሚስተሩን ይምረጡ፣ ለምሳሌ ዓመት I፣ ሴሚስተር አንድ።</string>
+    <string name="step2_title">ኮርሶችዎን ጨምሩ</string>
+    <string name="step2_desc">ክሬዲት ሰዓቱን እና ከ100 ያገኙትን ውጤት ያስገቡ።</string>
+    <string name="step3_title">ጂፒኤዎን ይመልከቱ</string>
+    <string name="step3_desc">ፊደል ደረጃዎ እና ጂፒኤዎ ለእርስዎ ይሰላሉ፣ ሁሉም ነገርም በስልክዎ ላይ ይቀመጣል።</string>
+    <string name="welcome_scale_title">የውጤት ሰንጠረዥዎን ይምረጡ</string>
+    <string name="welcome_start">እንጀምር</string>
+
+    <!-- Shared -->
+    <string name="out_of">ከ %1$s</string>
+
+    <!-- Exported report -->
+    <string name="report_title">የGradeCalc የውጤት ሪፖርት</string>
+    <string name="report_generated">የተዘጋጀው፡ %1$s</string>
+    <string name="report_cgpa">ድምር ጂፒኤ</string>
+    <string name="report_credits">ውጤት የተሰጣቸው ክሬዲት ሰዓቶች</string>
+    <string name="report_col_course">ኮርስ</string>
+    <string name="report_col_credits">ክሬዲት</string>
+    <string name="report_col_ects">ECTS</string>
+    <string name="report_col_grade">ደረጃ</string>
+    <string name="report_col_points">ነጥብ</string>
+    <string name="report_semester_gpa">ጂፒኤ %1$s</string>
+    <string name="report_footnote">* በኋላ ተደግሟል፣ በCGPA ውስጥ አይቆጠርም</string>
+</resources>

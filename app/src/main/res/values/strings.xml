@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GradeCalc</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_amharic" translatable="false">አማርኛ</string>
+
+    <!-- Common -->
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_add">Add</string>
+    <string name="action_switch">Switch</string>
+    <string name="cd_back">Back</string>
+
+    <!-- Home -->
+    <string name="home_title">My Grade Report</string>
+    <string name="cd_target_calc">Target calculator</string>
+    <string name="cd_settings">Settings</string>
+    <string name="cd_share">Share</string>
+    <string name="fab_semester">Semester</string>
+    <string name="cgpa_title">Cumulative GPA</string>
+    <string name="credit_hours_graded">%1$s graded credit hours</string>
+    <string name="home_empty">No semesters yet. Tap + Semester to add your first one, then add your courses with their marks. Your grades are worked out for you using the standard scale (see Settings).</string>
+    <string name="semesters_heading">Semesters</string>
+    <string name="semester_summary">%1$d courses | %2$s credit hours</string>
+    <string name="gpa_label">GPA</string>
+    <string name="cd_delete_semester">Delete semester</string>
+    <string name="delete_semester_title">Delete %1$s?</string>
+    <string name="delete_semester_message">This also deletes all its courses.</string>
+    <string name="trend_title">GPA trend</string>
+    <string name="legend_sgpa">Semester GPA</string>
+    <string name="legend_cgpa">CGPA</string>
+    <string name="share_title">Share your results</string>
+    <string name="share_pdf">Share as PDF</string>
+    <string name="share_image">Share as image</string>
+    <string name="share_chooser">Share your grade report</string>
+    <string name="share_failed">Could not create the report</string>
+
+    <!-- Semester screen -->
+    <string name="semester_gpa_title">Semester GPA</string>
+    <string name="courses_heading">Courses</string>
+    <string name="fab_course">Course</string>
+    <string name="semester_empty">No courses yet. Tap + Course and enter the credit hours and your mark.</string>
+    <string name="course_credit_line">%1$s credit hours | %2$d ECTS</string>
+    <string name="cd_delete_course">Delete course</string>
+    <string name="retaken_note">Retaken later: not counted in CGPA</string>
+
+    <!-- Course dialog -->
+    <string name="add_course">Add course</string>
+    <string name="edit_course">Edit course</string>
+    <string name="course_name">Course name</string>
+    <string name="course_exists">This course is already in this semester</string>
+    <string name="credit_hours">Credit hours</string>
+    <string name="mark_label">Mark out of 100 (optional)</string>
+    <string name="mark_error">Enter a number from 0 to 100</string>
+    <string name="mark_preview">Grade: %1$s (%2$s points)</string>
+    <string name="mark_hint">Your grade is worked out for you from the grade scale</string>
+    <string name="grade_button">Grade: %1$s</string>
+    <string name="not_graded">not graded</string>
+    <string name="not_graded_item">Not graded</string>
+    <string name="switch_to_mark">I know my mark instead</string>
+    <string name="switch_to_letter">I only know my letter grade</string>
+    <string name="calc_from_assessments">Calculate from assessments</string>
+    <string name="retake_hint">This course is also in %1$s. Only your latest graded attempt counts in CGPA.</string>
+
+    <!-- Course mark calculator -->
+    <string name="assess_title">Course mark calculator</string>
+    <string name="assess_intro">Add each assessment with the mark you got and the most it can give (its weight). Example: Mid exam 18 out of 30.</string>
+    <string name="assess_name">Name</string>
+    <string name="assess_earned">Mark</string>
+    <string name="assess_max">Out of</string>
+    <string name="assess_add">Add assessment</string>
+    <string name="cd_remove">Remove</string>
+    <string name="assess_default_assignment">Assignment</string>
+    <string name="assess_default_mid">Mid exam</string>
+    <string name="assess_default_final">Final exam</string>
+    <string name="assess_result">Mark so far: %1$s%% (%2$s of %3$s points)</string>
+    <string name="assess_empty">Enter at least one mark to see the result.</string>
+    <string name="assess_use">Use this mark</string>
+    <string name="assess_sum_note">Tip: the weights usually add up to 100 (now %1$s)</string>
+
+    <!-- Semester picker -->
+    <string name="new_semester">New semester</string>
+    <string name="picker_exists">%1$s is already added</string>
+    <string name="year_label">Year %1$s</string>
+    <string name="term_label">Semester %1$s</string>
+    <string name="term_one">One</string>
+    <string name="term_two">Two</string>
+    <string name="semester_full">%1$s, %2$s</string>
+
+    <!-- Target calculator -->
+    <string name="whatif_title">Target calculator</string>
+    <string name="current_cgpa">Current CGPA</string>
+    <string name="target_cgpa">Target CGPA</string>
+    <string name="next_credits">Next semester credit hours</string>
+    <string name="whatif_enter">Enter your target CGPA and the credit hours of your next semester.</string>
+    <string name="whatif_credits_positive">Credit hours must be greater than 0.</string>
+    <string name="whatif_invalid">Enter valid values.</string>
+    <string name="whatif_unreachable">Not reachable next semester. You would need a GPA of %1$s, but the highest possible is %2$s.</string>
+    <string name="whatif_met">You already meet this target. Any GPA next semester keeps you at or above it.</string>
+    <string name="whatif_need">You need a GPA of %1$s next semester.</string>
+
+    <!-- Settings -->
+    <string name="scale_title">Grade scale</string>
+    <string name="scale_intro">Marks are rounded to a whole number (74.5 counts as 75) and matched to a grade below. Edit the points to match your university. Changes update all GPAs immediately.</string>
+    <string name="points">Points</string>
+    <string name="reset_scale">Reset to the default (Ethiopian) scale</string>
+    <string name="language_title">Language</string>
+    <string name="presets_title">Grading scale preset</string>
+    <string name="presets_note">Pick the scale your university uses. You can still edit the points afterwards. Please check it against your university\'s grading policy.</string>
+    <string name="preset_ethiopia">Ethiopian university 4.0 (default)</string>
+    <string name="preset_us_pm">Standard 4.0 with plus/minus</string>
+    <string name="preset_us_simple">Simple 4.0 (A, B, C, D, F)</string>
+    <string name="preset_five">5.0 scale (A to F, highest 5.0)</string>
+    <string name="preset_confirm_title">Switch to %1$s?</string>
+    <string name="preset_confirm_message">This replaces the current grade scale and recalculates all your GPAs.</string>
+
+    <!-- Welcome -->
+    <string name="welcome_title">Welcome to GradeCalc</string>
+    <string name="welcome_intro">Work out your semester GPA and CGPA in a few taps. You don\'t need to know the grading scale: just enter your marks.</string>
+    <string name="step1_title">Add a semester</string>
+    <string name="step1_desc">Choose the year and semester, like Year I, Semester One.</string>
+    <string name="step2_title">Add your courses</string>
+    <string name="step2_desc">Enter the credit hours and your mark out of 100.</string>
+    <string name="step3_title">See your GPA</string>
+    <string name="step3_desc">Your letter grade and GPA are worked out for you, and everything is saved on your phone.</string>
+    <string name="welcome_scale_title">Choose your grading scale</string>
+    <string name="welcome_start">Get started</string>
+
+    <!-- Shared -->
+    <string name="out_of">out of %1$s</string>
+
+    <!-- Exported report -->
+    <string name="report_title">GradeCalc grade report</string>
+    <string name="report_generated">Created %1$s</string>
+    <string name="report_cgpa">Cumulative GPA</string>
+    <string name="report_credits">Graded credit hours</string>
+    <string name="report_col_course">Course</string>
+    <string name="report_col_credits">Credits</string>
+    <string name="report_col_ects">ECTS</string>
+    <string name="report_col_grade">Grade</string>
+    <string name="report_col_points">Points</string>
+    <string name="report_semester_gpa">GPA %1$s</string>
+    <string name="report_footnote">* Replaced by a later attempt, not counted in CGPA</string>
+</resources>
