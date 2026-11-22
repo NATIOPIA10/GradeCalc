@@ -19,6 +19,12 @@ Built with Kotlin and Jetpack Compose. All data stays on the phone: no account, 
 - **Light and dark theme** in a portal-inspired green style
 - **ECTS display** next to credit hours
 
+## Screenshots
+
+| Home | Semester | What-if |
+| --- | --- | --- |
+| <img src="screenshots/home.png" width="240"> | <img src="screenshots/semester.png" width="240"> | <img src="screenshots/whatif.png" width="240"> |
+
 ## How the GPA is calculated
 
 ```
