@@ -4,6 +4,10 @@ A simple, offline Android app that helps university students calculate their **s
 
 Built with Kotlin and Jetpack Compose. All data stays on the phone: no account, no server, no internet needed.
 
+## Download
+
+[Download the latest APK](https://github.com/NATIOPIA10/GradeCalc/releases/latest)
+
 ## Features
 
 - **Semester GPA and CGPA** from courses, credit hours and marks
