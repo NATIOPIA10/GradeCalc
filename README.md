@@ -6,7 +6,11 @@ Built with Kotlin and Jetpack Compose. All data stays on the phone: no account, 
 
 ## Download
 
-[Download the latest APK](https://github.com/NATIOPIA10/GradeCalc/releases/latest)
+[Download the latest APK](https://github.com/NATIOPIA10/GradeCalc/releases/latest/download/GradeCalc.apk)
+
+All versions and release notes: [Releases](https://github.com/NATIOPIA10/GradeCalc/releases)
+
+To install, open the file on your Android phone and allow "Install unknown apps" when asked.
 
 ## Features
 
