@@ -31,6 +31,7 @@ fun AppNavigation(vm: GradeViewModel) {
     val nav = rememberNavController()
     val state by vm.state.collectAsState()
     val language by vm.language.collectAsState()
+    val pinEnabled by vm.pinEnabled.collectAsState()
     val scope = rememberCoroutineScope()
 
     val context = LocalContext.current
@@ -102,6 +103,10 @@ fun AppNavigation(vm: GradeViewModel) {
                 onPreset = vm::applyPreset,
                 onUpdate = vm::updateScaleEntry,
                 onReset = vm::resetScale,
+                pinEnabled = pinEnabled,
+                onSetPin = vm::setPin,
+                onChangePin = vm::changePin,
+                onRemovePin = vm::removePin,
                 onBack = { nav.popBackStack() },
             )
         }

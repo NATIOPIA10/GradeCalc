@@ -18,6 +18,9 @@ interface SemesterDao {
 
     @Delete
     suspend fun delete(semester: SemesterEntity)
+
+    @Query("DELETE FROM semesters")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -33,6 +36,9 @@ interface CourseDao {
 
     @Delete
     suspend fun delete(course: CourseEntity)
+
+    @Query("DELETE FROM courses")
+    suspend fun deleteAll()
 }
 
 @Dao

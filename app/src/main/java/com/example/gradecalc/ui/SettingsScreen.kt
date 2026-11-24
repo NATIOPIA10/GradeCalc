@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import com.example.gradecalc.R
 import com.example.gradecalc.data.GradeScaleEntry
 import com.example.gradecalc.data.ScalePreset
+import com.example.gradecalc.domain.PinResult
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -48,8 +49,13 @@ fun SettingsScreen(
     onPreset: (ScalePreset) -> Unit,
     onUpdate: (GradeScaleEntry) -> Unit,
     onReset: () -> Unit,
+    pinEnabled: Boolean,
+    onSetPin: (String) -> Boolean,
+    onChangePin: (current: String, new: String) -> PinResult,
+    onRemovePin: (current: String) -> PinResult,
     onBack: () -> Unit,
 ) {
+    var pinDialog by remember { mutableStateOf<PinMode?>(null) }
     // Bumped on reset or preset change so the text fields reload the new values.
     var reloadCount by remember { mutableIntStateOf(0) }
     var pendingPreset by remember { mutableStateOf<ScalePreset?>(null) }
@@ -75,9 +81,43 @@ fun SettingsScreen(
         ) {
             item {
                 Text(
+                    stringResource(R.string.security_title),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.secondary,
+                )
+            }
+            item {
+                Text(
+                    stringResource(R.string.security_note),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            if (pinEnabled) {
+                item {
+                    OutlinedButton(onClick = { pinDialog = PinMode.CHANGE }, modifier = Modifier.fillMaxWidth()) {
+                        Text(stringResource(R.string.pin_change))
+                    }
+                }
+                item {
+                    OutlinedButton(onClick = { pinDialog = PinMode.REMOVE }, modifier = Modifier.fillMaxWidth()) {
+                        Text(stringResource(R.string.pin_remove))
+                    }
+                }
+            } else {
+                item {
+                    OutlinedButton(onClick = { pinDialog = PinMode.SET }, modifier = Modifier.fillMaxWidth()) {
+                        Text(stringResource(R.string.pin_set))
+                    }
+                }
+            }
+
+            item {
+                Text(
                     stringResource(R.string.language_title),
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.secondary,
+                    modifier = Modifier.padding(top = 12.dp),
                 )
             }
             item { LanguageChips(language = language, onChange = onLanguage) }
@@ -160,6 +200,20 @@ fun SettingsScreen(
                 ) { Text(stringResource(R.string.reset_scale)) }
             }
         }
+    }
+
+    pinDialog?.let { mode ->
+        PinDialog(
+            mode = mode,
+            onSubmit = { current, new ->
+                when (mode) {
+                    PinMode.SET -> if (onSetPin(new)) PinResult.Ok else PinResult.Wrong(0)
+                    PinMode.CHANGE -> onChangePin(current, new)
+                    PinMode.REMOVE -> onRemovePin(current)
+                }
+            },
+            onDismiss = { pinDialog = null },
+        )
     }
 
     pendingPreset?.let { preset ->

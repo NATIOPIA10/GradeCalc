@@ -37,5 +37,13 @@ class GradeRepository(private val db: AppDatabase) {
         }
     }
 
+    /** Deletes every semester and course (the grade scale stays). Used when the PIN is forgotten. */
+    suspend fun eraseAllGrades() {
+        db.withTransaction {
+            courseDao.deleteAll()
+            semesterDao.deleteAll()
+        }
+    }
+
     suspend fun resetScale() = applyPreset(ScalePreset.ETHIOPIA)
 }

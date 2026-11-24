@@ -22,12 +22,7 @@ Built with Kotlin and Jetpack Compose. All data stays on the phone: no account, 
 - **English and Amharic**, switchable inside the app
 - **Light and dark theme** in a portal-inspired green style
 - **ECTS display** next to credit hours
-
-## Screenshots
-
-| Home | Semester | What-if |
-| --- | --- | --- |
-| <img src="screenshots/home.png" width="240"> | <img src="screenshots/semester.png" width="240"> | <img src="screenshots/whatif.png" width="240"> |
+- **PIN lock** (4 to 6 digits): asked on opening and after 30 seconds in the background, 5 wrong tries lock the pad for 30 seconds, the PIN is stored only as a salted hash, and screenshots are blocked while it is on
 
 ## How the GPA is calculated
 

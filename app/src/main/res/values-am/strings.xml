@@ -138,4 +138,25 @@
     <string name="report_col_points">ነጥብ</string>
     <string name="report_semester_gpa">ጂፒኤ %1$s</string>
     <string name="report_footnote">* በኋላ ተደግሟል፣ በCGPA ውስጥ አይቆጠርም</string>
+
+    <!-- PIN lock -->
+    <string name="pin_lock_title">ፒንዎን ያስገቡ</string>
+    <string name="pin_wrong">ፒኑ ትክክል አይደለም። የቀሩ ሙከራዎች፦ %1$d</string>
+    <string name="pin_locked_out">ብዙ ሙከራዎች ተደርገዋል። ከ%1$d ሰከንድ በኋላ ይሞክሩ</string>
+    <string name="pin_forgot">ፒን ረሱ?</string>
+    <string name="pin_forgot_title">ሁሉም ውሂብ ይሰረዝ?</string>
+    <string name="pin_forgot_message">የተረሳ ፒን መመለስ አይቻልም። ሁሉንም ሴሚስተሮች እና ኮርሶች ማጥፋት እና ፒኑን አስወግደው እንደገና መጀመር ይችላሉ። ይህ ሊመለስ አይችልም።</string>
+    <string name="pin_forgot_confirm">ሁሉንም ሰርዝ</string>
+    <string name="cd_backspace">የመጨረሻውን አሃዝ ሰርዝ</string>
+    <string name="action_unlock">ክፈት</string>
+    <string name="security_title">ደህንነት</string>
+    <string name="security_note">ውጤቶችዎን በፒን ይጠብቁ። መተግበሪያው ሲከፍቱት እና ለ30 ሰከንድ ትተውት ከሄዱ በኋላ ፒን ይጠይቃል። ፒን በርቶ ሳለ ስክሪንሾት አይወሰድም።</string>
+    <string name="pin_set">ፒን ያዘጋጁ</string>
+    <string name="pin_change">ፒን ይቀይሩ</string>
+    <string name="pin_remove">ፒን ያስወግዱ</string>
+    <string name="pin_current">አሁን ያለው ፒን</string>
+    <string name="pin_new">አዲስ ፒን (4-6 አሃዞች)</string>
+    <string name="pin_confirm">አዲሱን ፒን ያረጋግጡ</string>
+    <string name="pin_mismatch">ፒኖቹ አይመሳሰሉም</string>
+    <string name="pin_invalid">ከ4 እስከ 6 አሃዞች ይጠቀሙ</string>
 </resources>

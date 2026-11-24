@@ -8,12 +8,15 @@ import com.example.gradecalc.data.AppDatabase
 import com.example.gradecalc.data.CourseEntity
 import com.example.gradecalc.data.GradeRepository
 import com.example.gradecalc.data.GradeScaleEntry
+import com.example.gradecalc.data.PinStore
 import com.example.gradecalc.data.ScalePreset
 import com.example.gradecalc.data.SemesterEntity
 import com.example.gradecalc.data.resolveGrade
 import com.example.gradecalc.domain.CourseAttempt
 import com.example.gradecalc.domain.GpaCalculator
 import com.example.gradecalc.domain.GradeEntry
+import com.example.gradecalc.domain.PinPolicy
+import com.example.gradecalc.domain.PinResult
 import com.example.gradecalc.domain.Retakes
 import com.example.gradecalc.domain.SemesterLabels
 import java.util.Locale
@@ -63,6 +66,96 @@ class GradeViewModel(application: Application) : AndroidViewModel(application) {
     fun setLanguage(code: String) {
         _language.value = code
         prefs.edit().putString("lang", code).apply()
+    }
+
+    // ---- PIN lock ----
+
+    private val pinStore = PinStore(prefs)
+    private val _pinEnabled = MutableStateFlow(pinStore.isSet)
+    private val _locked = MutableStateFlow(pinStore.isSet)
+    private var backgroundedAt = 0L
+
+    /** True while a PIN is set. */
+    val pinEnabled: StateFlow<Boolean> = _pinEnabled.asStateFlow()
+
+    /** True while the lock screen must be shown. Starts locked whenever a PIN is set. */
+    val locked: StateFlow<Boolean> = _locked.asStateFlow()
+
+    /** Milliseconds left in a "too many tries" wait, or 0. */
+    fun lockoutRemainingMs(): Long =
+        PinPolicy.lockoutRemainingMs(pinStore.failedAttempts, pinStore.lastFailureAt, System.currentTimeMillis())
+
+    private fun checkPin(pin: String): PinResult {
+        val now = System.currentTimeMillis()
+        var failed = pinStore.failedAttempts
+        val remaining = PinPolicy.lockoutRemainingMs(failed, pinStore.lastFailureAt, now)
+        if (remaining > 0) return PinResult.LockedOut(remaining)
+        if (failed >= PinPolicy.MAX_ATTEMPTS) {
+            failed = 0
+            pinStore.saveFailures(0, 0L)
+        }
+        if (pinStore.verify(pin)) {
+            pinStore.saveFailures(0, 0L)
+            return PinResult.Ok
+        }
+        failed++
+        pinStore.saveFailures(failed, now)
+        return if (failed >= PinPolicy.MAX_ATTEMPTS) PinResult.LockedOut(PinPolicy.LOCKOUT_MS)
+        else PinResult.Wrong(PinPolicy.MAX_ATTEMPTS - failed)
+    }
+
+    fun unlock(pin: String): PinResult {
+        val result = checkPin(pin)
+        if (result is PinResult.Ok) _locked.value = false
+        return result
+    }
+
+    /** Sets a first PIN. Returns false when the PIN is not 4 to 6 digits. */
+    fun setPin(pin: String): Boolean {
+        if (!PinPolicy.isValid(pin)) return false
+        pinStore.set(pin)
+        _pinEnabled.value = true
+        return true
+    }
+
+    fun changePin(current: String, new: String): PinResult {
+        if (!PinPolicy.isValid(new)) return PinResult.Wrong(PinPolicy.MAX_ATTEMPTS)
+        val result = checkPin(current)
+        if (result is PinResult.Ok) pinStore.set(new)
+        return result
+    }
+
+    fun removePin(current: String): PinResult {
+        val result = checkPin(current)
+        if (result is PinResult.Ok) {
+            pinStore.clear()
+            _pinEnabled.value = false
+            _locked.value = false
+        }
+        return result
+    }
+
+    /** "Forgot PIN": deletes all semesters and courses and removes the PIN. */
+    fun eraseEverything() {
+        viewModelScope.launch {
+            repo.eraseAllGrades()
+            pinStore.clear()
+            _pinEnabled.value = false
+            _locked.value = false
+        }
+    }
+
+    /** Called when the app leaves the screen. Rotation is not leaving. */
+    fun onAppStopped(changingConfiguration: Boolean) {
+        if (!changingConfiguration) backgroundedAt = System.currentTimeMillis()
+    }
+
+    /** Called when the app comes back. Locks again if it was away for 30 seconds or more. */
+    fun onAppStarted() {
+        if (PinPolicy.shouldAutoLock(_pinEnabled.value, backgroundedAt, System.currentTimeMillis())) {
+            _locked.value = true
+        }
+        backgroundedAt = 0L
     }
 
     private fun defaultLanguage(): String = if (Locale.getDefault().language == "am") "am" else "en"

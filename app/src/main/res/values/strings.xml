@@ -142,4 +142,25 @@
     <string name="report_col_points">Points</string>
     <string name="report_semester_gpa">GPA %1$s</string>
     <string name="report_footnote">* Replaced by a later attempt, not counted in CGPA</string>
+
+    <!-- PIN lock -->
+    <string name="pin_lock_title">Enter your PIN</string>
+    <string name="pin_wrong">Wrong PIN. Attempts left: %1$d</string>
+    <string name="pin_locked_out">Too many attempts. Try again in %1$d seconds</string>
+    <string name="pin_forgot">Forgot PIN?</string>
+    <string name="pin_forgot_title">Erase all data?</string>
+    <string name="pin_forgot_message">A forgotten PIN cannot be recovered. You can erase all semesters and courses and remove the PIN, then start again. This cannot be undone.</string>
+    <string name="pin_forgot_confirm">Erase everything</string>
+    <string name="cd_backspace">Delete last digit</string>
+    <string name="action_unlock">Unlock</string>
+    <string name="security_title">Security</string>
+    <string name="security_note">Protect your grades with a PIN. The app asks for it when you open it and after you leave it for 30 seconds. Screenshots are blocked while a PIN is on.</string>
+    <string name="pin_set">Set PIN</string>
+    <string name="pin_change">Change PIN</string>
+    <string name="pin_remove">Remove PIN</string>
+    <string name="pin_current">Current PIN</string>
+    <string name="pin_new">New PIN (4-6 digits)</string>
+    <string name="pin_confirm">Confirm new PIN</string>
+    <string name="pin_mismatch">The PINs do not match</string>
+    <string name="pin_invalid">Use 4 to 6 digits</string>
 </resources>
